@@ -8,12 +8,20 @@
         mensajeError = classes("Error");
     
     form.addEventListener("submit", (e) => {
-        e.preventDefault();
         
-        validacionFormulario(nombreApellido, 0, "Complete su nombre de usuario");
-        validacionFormulario(eMail, 1, "Complete su email");
-        validacionFormulario(telefono, 2, "Complete su teléfono");
-        validacionFormulario(suConsulta, 3, "Complete su consulta");
+        let esNombreValido = validacionFormulario(nombreApellido, 0, "Complete su nombre de usuario");
+        let esEmailValido = validacionFormulario(eMail, 1, "Complete su email");
+        let esTelValido = validacionFormulario(telefono, 2, "Complete su teléfono");
+        let esConsultaValida = validacionFormulario(suConsulta, 3, "Complete su consulta");
+
+        if (esNombreValido&&esEmailValido&&esTelValido&&esConsultaValida){
+
+        }
+
+        else {
+        e.preventDefault();
+        }
+        
 
         });
           
@@ -23,11 +31,13 @@
         if (id.value.trim() === "") {
           mensajeError[Errores].innerHTML = mensajeErrorPantalla;
           id.style.border = "2px solid red";
+          return false;
         } 
         
         else {
           mensajeError[Errores].innerHTML = "";
           id.style.border = "2px solid green";
+          return true;
         }
 
         
