@@ -9,7 +9,7 @@
     
     form.addEventListener("submit", (e) => {
         
-        let esNombreValido = validacionFormulario(nombreApellido, 0, "Complete su nombre de usuario");
+        let esNombreValido = validacionFormulario(nombreApellido, 0, "Complete su nombre y su apellido");
         let esEmailValido = validacionFormulario(eMail, 1, "Complete su email");
         let esTelValido = validacionFormulario(telefono, 2, "Complete su teléfono");
         let esConsultaValida = validacionFormulario(suConsulta, 3, "Complete su consulta");
