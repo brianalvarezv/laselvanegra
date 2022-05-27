@@ -7,6 +7,8 @@
         suConsulta = id("FormConsulta"),
         mensajeError = classes("Error");
     
+    //Evitamos que se envíe el formulario si alguno de los campos está vacío 
+
     form.addEventListener("submit", (e) => {
         
         let esNombreValido = validacionFormulario(nombreApellido, 0, "Complete su nombre y su apellido");
@@ -39,6 +41,43 @@
           id.style.border = "2px solid green";
           return true;
         }
+    };   
 
+      //Limpiamos los campos, los mensajes de error y los resaltados al tocar "Limpiar"
+
+      form.addEventListener("reset", (e) => {
         
+        let esNombreLimpio = limpiezaFormulario(nombreApellido, 0, "");
+        let esEmailLimpio = limpiezaFormulario(eMail, 1, "");
+        let esTelLimpio = limpiezaFormulario(telefono, 2, "");
+        let esConsultaLimpia = limpiezaFormulario(suConsulta, 3, "");
+
+        if (esNombreLimpio&&esEmailLimpio&&esTelLimpio&&esConsultaLimpia){
+
+        }
+
+        else {
+        e.preventDefault();
+        }
+        
+
+        });
+          
+
+    let limpiezaFormulario = (id, Errores, mensajeErrorLimpio) => {
+
+        if (id.value.trim() > 0) 
+        {
+          mensajeError[Errores].innerHTML = mensajeErrorLimpio;
+          id.style.border = "";
+          return true;
+        } 
+        
+        else {
+          mensajeError[Errores].innerHTML = mensajeErrorLimpio;
+          id.style.border = "";
+          return true;
+        }
+        
+
       };
