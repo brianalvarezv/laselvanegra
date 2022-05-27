@@ -219,7 +219,8 @@ footer a, a:visited {
 #SubtituloQuienesSomos {
     text-align: center;
     font-size: 3rem;
-    margin: 0rem 3rem 1rem 3rem;
+    margin: 3rem 3rem 1rem 3rem;
+    padding-top: 4rem;
 }
 
 #ParrafoQuienesSomos {
@@ -641,7 +642,10 @@ textarea::placeholder {
     }
     
     /* Página de inicio cel */
-
+    
+    #SubtituloQuienesSomos {
+        padding-top: 0.5rem;
+    }
 
     #ParrafoQuienesSomos {
         font-size: 1.3rem;
